@@ -2,12 +2,12 @@ import { Text, VStack } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
 
 const GenreList = () => {
-  const { genres, error, isLoading } = useGenres();
+  const { data, error, isLoading } = useGenres();
 
   return (
     <VStack>
-      {genres.map((genre) => (
-        <Text>{genre.name}</Text>
+      {data.map((genre) => (
+        <Text key={genre.name}>{genre.name}</Text>
       ))}
     </VStack>
   );
